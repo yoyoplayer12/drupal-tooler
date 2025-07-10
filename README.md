@@ -65,6 +65,25 @@ Adds a small "OP" badge next to the username of the original poster on issue com
 
 ---
 
+### 🔍 Drupal Version Detection
+
+Automatically detects and displays the Drupal version of any website you visit through the extension popup.
+
+- **Smart Detection**: Uses multiple methods to identify Drupal sites:
+  - Checks meta generator tags for version information
+  - Looks for Drupal-specific CSS classes and body attributes
+- **Popup Display**: Shows version information when you click the extension icon:
+  - `Drupal 10` - Shows specific version when detected
+  - `Drupal (version unknown)` - Confirms it's Drupal but version unclear
+  - `Not a Drupal site` - When no Drupal installation is found
+  - `Cannot access page` - When permissions prevent detection
+- **Universal Compatibility**: Works on any website, not just Drupal.org
+- **Instant Results**: Version detection happens immediately when popup opens
+
+Perfect for developers who need to quickly identify Drupal versions across different sites during development, auditing, or troubleshooting.
+
+---
+
 ## 📸 Screenshots
 
 ![Drupal Tooler](https://github.com/user-attachments/assets/9b232e4e-968a-4221-9895-b970f3f0e100)

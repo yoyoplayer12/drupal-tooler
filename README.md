@@ -65,6 +65,25 @@ Adds a small "OP" badge next to the username of the original poster on issue com
 
 ---
 
+### 🎲 Field Filler
+
+Automatically fills form fields with realistic fake data for testing purposes.
+
+- **Smart Field Detection**: Recognizes field types and fills with appropriate data:
+  - Names (first, last, full)
+  - Email addresses
+  - Phone numbers
+  - Organizations
+  - URLs
+  - Dates
+  - Text content and paragraphs
+- **Context Menu Integration**:
+  - Right-click on any page: "Fill all form fields"
+  - Right-click on individual fields: "Fill this field"
+- **Works on any website** with form elements
+
+---
+
 ## 📸 Screenshots
 
 ![Drupal Tooler](https://github.com/user-attachments/assets/9b232e4e-968a-4221-9895-b970f3f0e100)

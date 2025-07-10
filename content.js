@@ -4,10 +4,12 @@
     const gitlabPatchUrl = chrome.runtime.getURL('modules/gitlabPatchFetcher.js');
     const highlightOPCommentsPath = chrome.runtime.getURL('modules/highlightOPComments.js');
     const previewPath = chrome.runtime.getURL('modules/patchPreview.js');
+    const fieldFillerPath = chrome.runtime.getURL('modules/drupalFieldFiller.js');
 
     const patchModule = await import(patchUrl);
     const replyModule = await import(replyUrl);
     const gitlabModule = await import(gitlabPatchUrl);
+    const fieldFillerModule = await import(fieldFillerPath);
     import(highlightOPCommentsPath).then(mod => mod.highlightOPComments());
     import(previewPath).then(mod => mod.addInlinePatchPreviews());
 
@@ -15,11 +17,13 @@
         patchModule.addComposerPatchColumn();
         replyModule.addReplyButtonsToComments();
         gitlabModule.addGitLabMRPatchComposer();
+        fieldFillerModule.initializeFieldFillerContextMenu();
     } else {
         window.addEventListener('DOMContentLoaded', () => {
             patchModule.addComposerPatchColumn();
             replyModule.addReplyButtonsToComments();
             gitlabModule.addGitLabMRPatchComposer();
+            fieldFillerModule.initializeFieldFillerContextMenu();
         });
     }
 })();

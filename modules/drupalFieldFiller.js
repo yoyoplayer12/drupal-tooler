@@ -183,7 +183,10 @@ class DrupalFieldFiller {
                 
             default:
                 // Text fields - determine content based on field purpose
-                if (this.isFieldType(element, ['first', 'fname', 'given'])) {
+                // Check more specific patterns first to avoid false matches
+                if (this.isFieldType(element, ['title', 'subject'])) {
+                    element.value = this.generator.words(this.generator.randomNumber(3, 8));
+                } else if (this.isFieldType(element, ['first', 'fname', 'given'])) {
                     element.value = this.generator.firstName();
                 } else if (this.isFieldType(element, ['last', 'lname', 'family', 'surname'])) {
                     element.value = this.generator.lastName();
@@ -195,8 +198,6 @@ class DrupalFieldFiller {
                     element.value = this.generator.phoneNumber();
                 } else if (this.isFieldType(element, ['organization', 'company', 'org'])) {
                     element.value = this.generator.organizationName();
-                } else if (this.isFieldType(element, ['title', 'subject'])) {
-                    element.value = this.generator.words(this.generator.randomNumber(3, 8));
                 } else if (this.isFieldType(element, ['user', 'login', 'username'])) {
                     element.value = `${this.generator.firstName().toLowerCase()}${this.generator.randomNumber(1, 999)}`;
                 } else {
